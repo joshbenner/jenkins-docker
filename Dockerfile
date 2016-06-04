@@ -5,10 +5,12 @@ USER root
 
 RUN rm -rf /var/lib/apt/lists/* && \
 	apt-get update && \
-	DEBIAN_FRONTEND=noninteractive apt-get install --no-install-recommends -y python-pip && \
+	DEBIAN_FRONTEND=noninteractive apt-get install --no-install-recommends -y \
+        python python-setuptools && \
 	apt-get clean && \
 	rm -rf /var/lib/apt/lists/* && \
-    pip install docker-cloud && \
+    easy_install pip && \
+    pip install -U docker-cloud setuptools virtualenv && \
     rm -rf /root/.cache/pip
 
 USER jenkins
