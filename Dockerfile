@@ -10,7 +10,7 @@ RUN rm -rf /var/lib/apt/lists/* && \
 	apt-get clean && \
 	rm -rf /var/lib/apt/lists/* && \
     easy_install pip && \
-    pip install -U docker-cloud setuptools virtualenv && \
+    pip install -U docker-cloud setuptools virtualenv pypirc && \
     rm -rf /root/.cache/pip
 
 USER jenkins
