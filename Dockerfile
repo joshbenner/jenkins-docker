@@ -6,7 +6,7 @@ USER root
 RUN rm -rf /var/lib/apt/lists/* && \
 	apt-get update && \
 	DEBIAN_FRONTEND=noninteractive apt-get install --no-install-recommends -y \
-        python python-setuptools && \
+        build-essential python python-setuptools python-dev && \
 	apt-get clean && \
 	rm -rf /var/lib/apt/lists/* && \
     easy_install pip && \
